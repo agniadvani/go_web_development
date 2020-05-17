@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Celebrities</title>
+  </head>
+  <body>
+<h1>Rockstars</h1>
+<ul>
+{{range .Rocknroll}}
+<li>{{.Name}} - {{.Band}}</li>
+{{end}}
+</ul>
+<h1>Actors</h1>
+<ul>
+{{range .Roleplay}}
+<li>{{.Name}} - {{.Movie}}</li>
+{{end}}
+</ul>
+  </body>
+</html>

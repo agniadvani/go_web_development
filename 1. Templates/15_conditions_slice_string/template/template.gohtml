@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Templates</title>
+  </head>
+  <body>
+example 1
+
+{{range .}}
+{{.}}
+{{end}}
+
+
+example 2
+
+{{range .}}
+{{if .Name}}
+{{.Name}}
+{{end}}
+{{end}}
+example 3 
+
+{{range.}}
+{{if and .Name .Alive}}
+{{.Name}}
+{{end}}
+{{end}}
+
+
+  </body>
+</html>
+

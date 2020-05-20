@@ -38,9 +38,9 @@ func rot13(bs []byte) []byte {
 	for i, v := range bs {
 		//ascii 97-122
 		if v <= 109 {
-			r13[i] = bs[i] + 13
+			r13[i] = v + 13
 		} else {
-			r13[i] = bs[i] - 13
+			r13[i] = v - 13
 		}
 
 	}

@@ -33,7 +33,7 @@ func handle(conn net.Conn) {
 		fmt.Println(ln)
 		fmt.Fprintln(conn, "I Heard you say", ln)
 	}
-	//breaks out of loop after 10 secs
+	//breaks out of loop after 10 secs.
 	conn.Close()
 	fmt.Println("****CODE PRINTS****")
 

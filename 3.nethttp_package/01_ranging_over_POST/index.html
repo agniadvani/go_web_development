@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTTP Server</title>
+</head>
+
+<body>
+  {{if .}}
+  <main>
+    <h1>Variables</h1>
+    {{range $key, $value := .}}
+    <p>{{$key}}</p>
+    <ul>
+      {{range $value}}
+      <li>{{.}}</li>
+      {{end}}
+    </ul>
+    {{end}}
+  </main>
+  {{end}}
+  <form action="/" method="post">
+    <label for="firstName">Enter your name</label>
+    <input type="text" name="firstName" id="firstName">
+    <input type="submit" name="submit">
+  </form>
+
+</body>
+
+</html>

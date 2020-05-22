@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTTP Server</title>
+</head>
+
+<body>
+
+  {{if .Method}}
+  <p><em>Method: {{.Method}}</em></p> {{end}}
+
+  {{if .Host}}
+  <p><em>Host: {{.Host}}</em></p>{{end}}
+  {{if .Contentlength}}
+  <p><em>Content Length: {{.Contentlength}}</em></p>{{end}}
+  {{if .URL}}
+  <p>Scheme: {{.URL.Scheme}}</p>
+  <p>Opaque: {{.URL.Opaque}}</p>
+  <p>Host: {{.URL.Host}}</p>
+  <p>Path: {{.URL.Path}}</p>
+  <p>RawPath: {{.URL.RawPath}}</p>
+  <p>ForceQuery: {{.URL.ForceQuery}}</p>
+  <p>RawQuery: {{.URL.RawQuery}}</p>
+  <p>Fragment: {{.URL.Fragment}}</p>
+  {{end}}
+
+  {{if .Header}}
+  <h1>Header</h1>
+  {{range $key, $value := .Header}}
+  <p>{{$key}}</p>
+
+  <ul>
+    {{range $value}}
+    <li>{{.}}</li>
+    {{end}}
+  </ul>
+  {{end}}
+  {{end}}
+
+
+  {{if .Submission}}
+  <h1>Variables</h1>
+  {{range $key,$value := .Submission}}
+  <p><strong>{{$key}}</strong></p>
+
+  <ul>
+    {{range $value}}
+    <li>{{.}}</li>
+    {{end}}
+  </ul>
+
+  {{end}}
+  {{end}}
+
+  <form action="/" method="post">
+    <label for="firstName">Enter your name</label>
+    <input type="text" name="firstName" id="firstName">
+    <input type="submit" name="submit">
+  </form>
+
+</body>
+
+</html>

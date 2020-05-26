@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"html/template"
-	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -35,6 +34,6 @@ func foo(w http.ResponseWriter, req *http.Request) {
 		}
 		s = string(bs)
 	}
-	tpl.ExecuteTemplate(w, "form.html", nil)
-	io.WriteString(w, s)
+	tpl.ExecuteTemplate(w, "form.html", s)
+
 }

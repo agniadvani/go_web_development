@@ -18,6 +18,7 @@ func main() {
 	http.HandleFunc("/", foo)
 	http.HandleFunc("/bar", bar)
 	http.HandleFunc("/barred", barred)
+	http.HandleFunc("/mp", mp)
 	http.Handle("/favicon.ico", http.NotFoundHandler())
 	http.ListenAndServe(":8080", nil)
 }
@@ -30,7 +31,7 @@ func foo(w http.ResponseWriter, req *http.Request) {
 func bar(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("Request method at bar is:", req.Method)
 	//303 see other
-	http.Redirect(w, req, "/", http.StatusSeeOther)
+	http.Redirect(w, req, "/", 303)
 }
 func barred(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("Request method at barred is:", req.Method)
@@ -38,4 +39,10 @@ func barred(w http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
+}
+
+func mp(w http.ResponseWriter, req *http.Request) {
+	fmt.Println("Request method at mp is:", req.Method)
+	//moved permanently
+	http.Redirect(w, req, "/", 301)
 }

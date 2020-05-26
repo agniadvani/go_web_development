@@ -27,6 +27,7 @@ func foo(w http.ResponseWriter, req *http.Request) {
 		if err != nil {
 			log.Fatal(err)
 		}
+		defer f.Close()
 		fmt.Println("\nfile", f, "\nheader", h)
 		bs, err := ioutil.ReadAll(f)
 		if err != nil {

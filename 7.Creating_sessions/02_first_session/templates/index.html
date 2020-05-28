@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+</head>
+
+<body>
+  <form method="POST">
+    <input type="email" name="username" placeholder="email">
+    <br>
+    <br>
+    <input type="text" name="firstname" placeholder="First Name">
+    <br>
+    <br>
+    <input type="text" name="lastname" placeholder="Last Name">
+    <br>
+    <br>
+    <input type="submit">
+  </form>
+
+  <h1><em>USER DATA:</em></h1>
+  <p>Email: {{.Username}}</p>
+  <p>First Name: {{.First}}</p>
+  <p>Last Name: {{.Last}}</p>
+  <br>
+  <br>
+  <a href="/homepage">Go To Homepage</a>
+</body>
+
+</html>

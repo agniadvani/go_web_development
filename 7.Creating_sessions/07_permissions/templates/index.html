@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  {{if .First}}
+  <h1>Logged in as:</h1>
+  <p>{{.First}}</p>
+  <p>{{.Last}}</p>
+  <p>{{.Username}}</p>
+  {{else}}
+  <a href="/signup">Sign Up</a>
+  <a href="/login">Log In</a>
+  {{end}}
+
+  <br>
+  <br>
+  <a href="/homepage">Go To Homepage</a>
+  <br>
+  <br>
+  {{if .First}}
+  <a href="/logout">Log Out</a>
+  {{end}}
+
+</body>
+
+</html>
